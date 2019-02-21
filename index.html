@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kooningan Ricebox</title>
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+	<meta name="description" content="Follow our instagram @kooningan" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		/* http://meyerweb.com/eric/tools/css/reset/ 
+		   v2.0 | 20110126
+		   License: none (public domain)
+		*/
+
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+		/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+		body {
+			line-height: 1;
+		}
+		ol, ul {
+			list-style: none;
+		}
+		blockquote, q {
+			quotes: none;
+		}
+		blockquote:before, blockquote:after,
+		q:before, q:after {
+			content: '';
+			content: none;
+		}
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+
+		body{
+			padding: 0;
+			margin: 0;
+			background: #000;
+			background-size: cover;
+		}
+
+		img{
+			display: block;
+			margin-bottom: 60px;
+			user-select: none;
+		}
+		
+		.position--center-middle{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+		form{
+			width: 400px;
+			overflow: hidden;
+			margin: 0 auto;
+		}	
+		form input{
+			float: left;
+			height: 40px;
+			width: 280px;
+			border: 1px solid #fff200;
+			color: #000;
+			font-family: 'Montserrat', sans-serif;
+			font-size: 12px;
+			font-weight: 600;
+			letter-spacing: 0.4px;
+			line-height: 38px;
+			box-sizing: border-box;
+			outline: none;
+			padding: 0 12px;
+			background: #fff;
+		}
+		form button{
+			float: left;
+			height: 40px;
+			width: 119px;
+			background-color: #fff200;
+			border: 1px solid #fff200;
+			margin-left: 1px;
+			box-sizing: border-box;
+			color: #000;
+			font-family: 'Montserrat', sans-serif;
+			font-size: 12px;
+			font-weight: 600;
+			letter-spacing: 0.4px;
+			line-height: 38px;
+			text-align: center;
+			cursor: pointer;
+			transition: all .4s ease;
+			outline: none;
+		}
+		form button:hover{
+			opacity: 0.8;
+		}
+		.error{
+			display: none;
+			margin-top: 25px;
+			color: #EE4D38;
+			font-family: 'Montserrat', sans-serif;
+			font-size: 13px;
+			font-weight: 600;
+			letter-spacing: 0.4px;
+			line-height: 18px;
+			text-align: center;
+		}
+		.thanks{
+			height: 40px;
+			width: 400px;
+			background-color: #fff200;
+			color: #000;
+			font-family: 'Montserrat', sans-serif;
+			font-size: 12px;
+			font-weight: 600;
+			letter-spacing: 0.4px;
+			line-height: 40px;
+			text-align: center;
+			margin: 0 auto;
+			display: none;
+		}
+		.disclaimer{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			padding-bottom: 30px;
+		}
+		.disclaimer p{
+			color: #fff200;
+			font-family: 'Montserrat', sans-serif;
+			font-size: 12px;
+			letter-spacing: 0.44px;
+			line-height: 15px;
+			text-align: center;
+		}
+		.is-error input{
+			border-color: #EE4D38;
+		}
+		.is-error .error{
+			display: block;
+		}
+		@media only screen and (max-width: 768px) {
+			body {
+				padding: 0 50px;
+			}
+			.position--center-middle{
+				width: calc(100% - 80px);
+			}
+			img, form, .thanks{
+				width: 100%;
+			}
+			.thanks{
+				font-size: 2.3vw;
+			}
+			form input, form button{
+				float: none;
+				width: 100%;
+			}
+			.disclaimer{
+				padding-bottom: 15px;
+			}
+			.disclaimer p{
+				font-size: 10px;
+				padding: 0 15px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="position--center-middle">
+		<img src="logo.jpg" width="480" />
+		<form id="visitor">
+			<input type="text" name="email" id="email" placeholder="Enter your email address here" />
+			<button type="submit" id="submit-form">Get Updates</button>
+		</form>
+		<p class="error">
+			<i class="fa fa-exclamation-circle"></i> <span>Invalid Email Address</span>
+		</p>
+		<p class="thanks">
+			Registration successful. We'll keep you updated!
+		</p>
+	</div>
+	<div class="disclaimer">
+		<p>By clicking on "Get Updates", you agree to subscribe to Kooningan Ricebox mailing list.</p>
+	</div>
+</body>
+<script type="text/javascript">
+	// https://medium.com/@dmccoy/how-to-submit-an-html-form-to-google-sheets-without-google-forms-b833952cc175
+	// https://docs.google.com/spreadsheets/d/1Ap8voB8UIsEoYmFsmvVteh_pRmaXi28bTpRoSVosTy8/edit?usp=sharing
+	var $form = $("form#visitor"),
+	url = "https://script.google.com/a/creativebrain.web.id/macros/s/AKfycbyepPQtMVSl4cRtEb0KfrZML9QL7R39nQZkmoAZ7Fswt1qQYqY/exec"
+
+	$.fn.serializeObject = function(){
+		var o = {};
+		var a = this.serializeArray();
+		$.each(a, function() {
+			if (o[this.name]) {
+				if (!o[this.name].push) {
+				o[this.name] = [o[this.name]];
+				}
+				o[this.name].push(this.value || '');
+			}
+			else {
+				o[this.name] = this.value || '';
+			}
+		});
+		return o;
+	};
+
+	$("#submit-form").on("click", function(e) {
+		e.preventDefault();
+
+		function validateEmail(email) {
+			var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			return re.test(email);
+		}
+		
+		var email = $("#email").val();
+
+		if (validateEmail(email)) {
+			var jqxhr = $.ajax({
+				url: url,
+				method: "GET",
+				dataType: "json",
+				data: $form.serializeObject()
+			}).done(function(){
+				// do something
+				// alert("success");
+				$("body").removeClass('is-error');
+				$("form").hide();
+				$(".thanks").show();
+			});
+		} else {
+			// alert("error");
+			$("body").addClass('is-error');
+		}
+	});
+</script>
+</html>
